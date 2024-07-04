@@ -33,6 +33,7 @@ if (config.has('rtpengine')) {
     }
     next();
   });
+  logger.info("rtpegine fertig")
 
 }
 else if (config.has('freeswitch')) {
@@ -43,6 +44,7 @@ else {
   assert('recorder type not specified in configuration: must be either rtpengine or freeswitch');
 }
 
+logger.info("set callhandler for invite")
 srf.invite(callHandler);
 
 module.exports = srf;
